@@ -1,0 +1,9 @@
+{{ $name := .Get 0 }}
+<div class="content-section">
+    <h2>Footnotes</h2>
+    <ul>
+        {{ range $i, $info := index .Site.Data.footnotes $name }}
+        <li class="footnote" id="footnote-{{ $i }}">[{{ $i }}] {{ $info }}</li>
+        {{ end }}
+    </ul>
+</div>

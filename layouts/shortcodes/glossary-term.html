@@ -1,0 +1,5 @@
+{{ $term := .Get 0 }}
+<span class="glossary-term">
+    <a target="_blank" href="{{ .Site.BaseURL }}/glossary/#{{ $term }}">{{ $term }}</a>
+<span class="tooltip">{{ index .Site.Data.glossary $term }}</span>
+</span>

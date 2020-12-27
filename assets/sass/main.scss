@@ -1,0 +1,169 @@
+/* sun and moon icons from https://feathericons.com */
+/* todo credits */
+
+$font-stack: Helvetica, sans-serif;
+$dark-theme-text-color: #eeeeee;
+$dark-theme-bg-color: #424242;
+$light-theme-text-color: #424242;
+$light-theme-bg-color: #eeeeee;
+$highlight-color: #ffab0f;
+/*$baseURL: "http://mobyvb.com/lattice-theme";*/
+$baseURL: "";
+
+body {
+    font-family: $font-stack;
+    padding: 0;
+    margin: 0;
+    background-color: lightblue;
+    color: $light-theme-text-color;
+}
+
+a, a:visited {
+    color: $light-theme-text-color;
+}
+
+.night a, .night a:visited {
+    color: $dark-theme-text-color;
+}
+
+body.night {
+    background-color: $dark-theme-bg-color;
+}
+
+.night #bg {
+    /*background-image: linear-gradient(#20202c, #cd82a0);*/
+    /* stars background made with help of tutorial: https://www.maketecheasier.com/create-space-scenes-in-gimp/ */
+    background-image: url($baseURL+"/images/stars2.jpg");
+    background-repeat: repeat;
+}
+.night #fg {
+    background-image: url($baseURL+"/images/tiledbgblack.png");
+}
+.day #bg {
+    background-image: linear-gradient(#9795EF, #F9C5D1);
+}
+.day #bg2 {
+    background-image: url($baseURL+"/images/clouds.png");
+}
+.day #fg {
+    background-image: url($baseURL+"/images/tiledbg.png");
+}
+.day .content-section {
+    background-color: $light-theme-bg-color;
+    color: $light-theme-text-color;
+}
+.night .content-section {
+    background-color: $dark-theme-bg-color;
+    color: $dark-theme-text-color;
+}
+
+#bg, #bg2 {
+    background-repeat: repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150%;
+}
+
+#fg {
+    background-repeat: repeat;
+    background-size: 250px 230px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    min-height: 100%;
+    /* todo foreground min height 100% */
+    /* make foreground match height of content somehow */
+}
+
+.content-section {
+    width: 500px;
+    margin: 50px auto;
+    padding: 10px 30px;
+    /* todo use clamp for width */
+}
+
+#header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: $light-theme-bg-color;
+    box-sizing: border-box;
+    border-bottom: 1px solid $light-theme-text-color;
+    padding: 10px 20px;
+}
+#header h1 {
+    margin: 0;
+    display: inline-block;
+}
+#header a {
+    color: $light-theme-text-color;
+}
+.night #header a {
+    color: $dark-theme-text-color;
+}
+#nav {
+    display: inline-block;
+
+    width: 300px;
+    float: right;
+}
+#nav a {
+    display: inline-block;
+    margin: 5px 20px;
+}
+.night #header {
+    background-color: $dark-theme-bg-color;
+    color: $dark-theme-text-color;
+    border-bottom: 1px solid $dark-theme-text-color;
+}
+#bg-controls button {
+    background-image: url($baseURL+"/images/sun.svg");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: 30px 30px;
+    border: none;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    cursor: pointer;
+}
+#bg-controls button:hover {
+    background-image: url($baseURL+"/images/sun-fill.svg");
+}
+.night #bg-controls button {
+    background-image: url($baseURL+"/images/moon-white.svg");
+}
+.night #bg-controls button:hover {
+    background-image: url($baseURL+"/images/moon-white-fill.svg");
+}
+#bg-controls {
+    width: 50px;
+    float: right;
+}
+
+.glossary-term, .footnote-ref {
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+    border: 1px dashed $light-theme-text-color;
+}
+.tooltip {
+    display: none;
+    font-weight: normal;
+    border: 1px solid $light-theme-text-color;
+    color: $light-theme-text-color;
+    width: 200px;
+    background-color: $light-theme-bg-color;
+    padding: 4px;
+}
+:hover > .tooltip{
+    display: block;
+    position: absolute;
+    top: 20px;
+}
+.footnote:target, .glossary-definition:target {
+    background-color: $highlight-color;
+}

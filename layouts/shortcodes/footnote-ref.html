@@ -1,0 +1,10 @@
+{{- $name := .Get 0 -}}
+{{- $index := .Get 1 -}}
+{{- $footnotes := index .Site.Data.footnotes $name -}}
+{{- $info := index $footnotes $index -}}
+<span class="footnote-ref">
+<a href="#footnote-{{ $index }}">
+    [{{ $index }}]
+</a>
+<span class="tooltip">{{ $info }}</span>
+</span>

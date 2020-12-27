@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+{{- partial "head.html" . -}}
+
+<body class="day">
+    <div id="bg"></div>
+    <div id="bg2"></div>
+    <div id="fg">
+
+        {{- partial "header.html" . -}}
+        <!-- {{- partial "footer.html" . -}} -->
+
+        <!-- <div id="content"> -->
+        {{- block "main" . }}{{- end }}
+        <!-- </div> -->
+
+    </div>
+
+    <script src="{{ .Site.BaseURL }}/js/script.js"></script>
+</body>
+
+</html>

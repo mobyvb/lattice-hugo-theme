@@ -1,0 +1,5 @@
+<ul>
+{{ range $key, $value := .Site.Data.glossary }}
+<li class="glossary-definition" id={{ $key }}>{{ $key }}: {{ $value }}</li>
+{{ end }}
+</ul>
