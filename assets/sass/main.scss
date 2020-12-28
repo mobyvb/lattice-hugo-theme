@@ -10,6 +10,19 @@ $highlight-color: #ffab0f;
 /*$baseURL: "http://mobyvb.com/lattice-hugo-demo";*/
 $baseURL: "";
 
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.7em;
+}
+
 body {
     font-family: $font-stack;
     padding: 0;
@@ -78,9 +91,9 @@ body.night {
 }
 
 .content-section {
-    width: 500px;
+    max-width: 480px;
     margin: 50px auto;
-    padding: 10px 30px;
+    padding: 1em 3em;
     /* todo use clamp for width */
 }
 
