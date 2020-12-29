@@ -7,7 +7,6 @@ $dark-theme-bg-color: #424242;
 $light-theme-text-color: #424242;
 $light-theme-bg-color: #eeeeee;
 $highlight-color: #ffab0f;
-/*$baseURL: "http://mobyvb.com/lattice-hugo-demo";*/
 $baseURL: "";
 
 h1 {
@@ -90,10 +89,14 @@ body.night {
     /* make foreground match height of content somehow */
 }
 
+#content {
+    padding: 1em 2em;
+}
 .content-section {
     max-width: 480px;
     margin: 50px auto;
     padding: 1em 3em;
+    text-align: justify;
     /* todo use clamp for width */
 }
 
