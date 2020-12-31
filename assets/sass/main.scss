@@ -138,6 +138,9 @@ body.night {
             top: 10px;
             right: 10px;
         }
+        #nav {
+            top:12px;
+        }
     }
 }
 #header h1 {
@@ -152,10 +155,9 @@ body.night {
     color: $dark-theme-text-color;
 }
 #nav {
-    display: inline-block;
-
-    width: 300px;
-    float: right;
+    position: fixed;
+    top: 22px;
+    right: 70px;
 }
 #nav a {
     display: inline-block;
