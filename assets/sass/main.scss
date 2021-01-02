@@ -8,6 +8,10 @@ $light-theme-text-color: #424242;
 $light-theme-bg-color: #eeeeee;
 $highlight-color: #ffab0f;
 $baseURL: "";
+$header-height-small: 70px;
+$header-height-large: 100px;
+$header-offset-small: 90px;
+$header-offset-large: 120px;
 $header-underline-color: #eaecef;
 
 h1 {
@@ -116,11 +120,22 @@ body.night {
     /* todo use clamp for width */
 }
 
+a.anchor {
+    display: block;
+    visibility: hidden;
+    position: relative;
+    top: -$header-offset-small;
+
+    @media only screen and (max-width: 512px) {
+        top: -$header-offset-large;
+    }
+}
+
 #header {
     position: sticky;
     top: 0;
     width: 100%;
-    height: 70px;
+    height: $header-height-small;
     background-color: $light-theme-bg-color;
     box-sizing: border-box;
     border-bottom: 1px solid $light-theme-text-color;
@@ -129,7 +144,7 @@ body.night {
     white-space: nowrap;
 
     @media only screen and (max-width: 512px) {
-        height: 100px;
+        height: $header-height-large;
         h1 {
             position: relative;
             top: 30px;
