@@ -4,6 +4,8 @@
 $font-stack: Segoe UI, Helvetica, Arial, sans-serif;
 $dark-theme-text-color: #ccc;
 $dark-theme-bg-color: #121212;
+// $dark-theme-highlight-color: #68ae7f;
+$dark-theme-highlight-color: #71BB9E;
 $light-theme-text-color: #424242;
 $light-theme-bg-color: #eeeeee;
 $highlight-color: #ffab0f;
@@ -12,7 +14,6 @@ $header-height-small: 70px;
 $header-height-large: 100px;
 $header-offset-small: 90px;
 $header-offset-large: 120px;
-$header-underline-color: #eaecef;
 
 h1 {
     font-size: 2em;
@@ -23,9 +24,17 @@ h2 {
     font-size: 1.5em;
 }
 
+li {
+    margin-bottom: 7px;
+}
+
 .night .content-section {
     h1, h2 {
-        border-bottom: 1px solid $dark-theme-text-color;
+        border-bottom: 1px solid $dark-theme-highlight-color;
+    }
+    blockquote p {
+        padding-left: 15px;
+        border-left: 1px solid $dark-theme-highlight-color;
     }
 }
 .day .content-section {
@@ -52,7 +61,7 @@ a, a:visited {
 }
 
 .night a, .night a:visited {
-    color: $dark-theme-text-color;
+    color: $dark-theme-highlight-color;
 }
 
 body.night {
@@ -233,4 +242,8 @@ a.anchor {
 }
 .footnote:target, .glossary-definition:target {
     background-color: $highlight-color;
+}
+.night .footnote:target, .glossary-definition:target {
+    background-color: $dark-theme-bg-color;
+    color: $dark-theme-highlight-color;
 }
