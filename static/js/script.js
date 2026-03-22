@@ -1,13 +1,8 @@
+var root = document.documentElement
 var body = document.body
 
 window.addEventListener('load', function() {
-    // Apply saved theme before showing transitions
-    if (localStorage['theme'] === 'day') {
-        setDay(true)
-    } else {
-        setNight(true)
-    }
-    // Enable transitions after initial theme is set
+    // Enable transitions after initial theme is set (inline script in <head> handles the class)
     requestAnimationFrame(function() {
         requestAnimationFrame(function() {
             body.classList.add('transitions-ready')
@@ -16,21 +11,28 @@ window.addEventListener('load', function() {
 })
 
 function toggleNight() {
-    if (body.classList.contains('night')) {
-        setDay(false)
+    if (root.classList.contains('day')) {
+        setNight()
+    } else if (root.classList.contains('night')) {
+        setDay()
     } else {
-        setNight(false)
+        // No saved preference — invert the current OS preference
+        if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+            setNight()
+        } else {
+            setDay()
+        }
     }
 }
 
-function setNight(initial) {
-    body.classList.remove('day')
-    body.classList.add('night')
-    if (!initial) localStorage['theme'] = 'night'
+function setNight() {
+    root.classList.remove('day')
+    root.classList.add('night')
+    localStorage.setItem('theme', 'night')
 }
 
-function setDay(initial) {
-    body.classList.remove('night')
-    body.classList.add('day')
-    if (!initial) localStorage['theme'] = 'day'
+function setDay() {
+    root.classList.remove('night')
+    root.classList.add('day')
+    localStorage.setItem('theme', 'day')
 }
