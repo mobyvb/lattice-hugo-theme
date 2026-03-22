@@ -9,7 +9,6 @@ $dark-theme-highlight-color: #71BB9E;
 $light-theme-text-color: #424242;
 $light-theme-bg-color: #eeeeee;
 $highlight-color: #ffab0f;
-$baseURL: "";
 $header-height-small: 70px;
 $header-height-large: 100px;
 $header-offset-small: 90px;
@@ -71,20 +70,20 @@ body.night {
 .night #bg {
     /*background-image: linear-gradient(#20202c, #cd82a0);*/
     /* stars background made with help of tutorial: https://www.maketecheasier.com/create-space-scenes-in-gimp/ */
-    background-image: url($baseURL+"/images/stars2.jpg");
+    background-image: url("/images/stars2.jpg");
     background-repeat: repeat;
 }
 .night #fg {
-    background-image: url($baseURL+"/images/tiledbgblack.png");
+    background-image: url("/images/tiledbgblack.png");
 }
 .day #bg {
     background-image: linear-gradient(#9795EF, #F9C5D1);
 }
 .day #bg2 {
-    background-image: url($baseURL+"/images/clouds.png");
+    background-image: url("/images/clouds.png");
 }
 .day #fg {
-    background-image: url($baseURL+"/images/tiledbg.png");
+    background-image: url("/images/tiledbg.png");
 }
 .day .content-section {
     background-color: $light-theme-bg-color;
@@ -193,7 +192,7 @@ a.anchor {
     border-bottom: 1px solid $dark-theme-text-color;
 }
 #bg-controls button {
-    background-image: url($baseURL+"/images/sun.svg");
+    background-image: url("/images/sun.svg");
     background-repeat: no-repeat;
     background-color: transparent;
     background-size: 30px 30px;
@@ -207,13 +206,13 @@ a.anchor {
     right: 30px;
 }
 #bg-controls button:hover {
-    background-image: url($baseURL+"/images/sun-fill.svg");
+    background-image: url("/images/sun-fill.svg");
 }
 .night #bg-controls button {
-    background-image: url($baseURL+"/images/moon-white.svg");
+    background-image: url("/images/moon-white.svg");
 }
 .night #bg-controls button:hover {
-    background-image: url($baseURL+"/images/moon-white-fill.svg");
+    background-image: url("/images/moon-white-fill.svg");
 }
 #bg-controls {
     width: 50px;
